@@ -1,0 +1,50 @@
+<div class="my-3">
+    <h1 class="text-center">Contact Us</h1>
+</div>
+<div class="container contact_div">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="user.fullname"
+                        name="fullname" #fullname="ngModel" placeholder="Enter Fullname here" required>
+                </div>
+                <div [hidden]="fullname.valid || fullname.pristine" class="alert alert-danger">
+                    Full name is required
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput2" [(ngModel)]="user.phone"
+                        name="phone" #phone="ngModel" placeholder="Enter Phone number here" required>
+                </div>
+                <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">
+                    Phone number is required
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput3" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput3" [(ngModel)]="user.email"
+                        name="email" #email="ngModel" placeholder="Enter Email here" required>
+                </div>
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                    Email is required
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="user.message"
+                        name="message" #msg="ngModel" required></textarea>
+                    <div [hidden]="msg.valid || msg.pristine" class="alert alert-danger">
+                        Message is required
+                    </div>
+
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-primary" type="submit" [disabled]="!contactForm.form.valid">
+                        Submit form
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

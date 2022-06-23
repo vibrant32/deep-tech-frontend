@@ -1,0 +1,14 @@
+<div class="my-5">
+    <h1 class="text-center">Our Services</h1>
+</div>
+<div class="container-fluid mb-5">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="row gy-4">
+                <div class="col-md-4 col-10 mx-auto" *ngFor="let serve of services">
+                    <app-card [title]="serve.title" [imgsrc]="serve.imgsrc"></app-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
